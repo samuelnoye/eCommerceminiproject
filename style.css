@@ -1,0 +1,284 @@
+body {
+    overflow-x: hidden;
+}
+
+.sidebar-container {
+    position: fixed;
+    width: 220px;
+    height: 100%;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.content-container {
+    padding-top: 20px;
+}
+
+.sidebar-logo {
+    padding: 15px 15px 15px 30px;
+    font-size: 20px;
+    background: #bb104f;
+}
+
+.sidebar-navigation {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    position: relative;
+}
+
+.sidebar-navigation li {
+    background-color: transparent;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    line-height: 30px;
+}
+
+.sidebar-navigation li a {
+    padding: 10px 15px 10px 30px;
+    display: block;
+    color: rgb(160, 148, 148);
+}
+
+.sidebar-navigation li .fa {
+    margin-right: 10px;
+}
+
+.sidebar-navigation li a:active,
+.sidebar-navigation li a:hover,
+.sidebar-navigation li a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+.sidebar-navigation li::before {
+    background-color: #d01257;
+    position: absolute;
+    content: '';
+    height: 100%;
+    left: 0;
+    top: 0;
+    -webkit-transition: width 0.2s ease-in;
+    transition: width 0.2s ease-in;
+    width: 3px;
+    z-index: -1;
+}
+
+.sidebar-navigation li:hover::before {
+    width: 100%;
+}
+
+.sidebar-navigation .header {
+    font-size: 12px;
+    text-transform: uppercase;
+    background-color: #151515;
+    padding: 10px 15px 10px 30px;
+}
+
+.sidebar-navigation .header::before {
+    background-color: transparent;
+}
+
+.content-container {
+    padding-left: 220px;
+}
+
+table {
+    table-layout: fixed;
+    width: 70%;
+    border-collapse: collapse;
+    align-content: center;
+}
+
+thead th:nth-child(1) {
+    width: 7%;
+}
+
+thead th:nth-child(2) {
+    width: 20%;
+}
+
+thead th:nth-child(3) {
+    width: 17%;
+    text-align: center;
+}
+
+thead th:nth-child(4) {
+    width: 15%;
+}
+
+thead th:nth-child(5) {
+    width: 15%;
+}
+
+thead th:nth-child(6) {
+    width: 6%;
+}
+
+thead th:nth-child(7) {
+    width: 3%;
+}
+
+thead th:nth-child(8) {
+    width: 17%;
+}
+
+th,
+td {
+    padding: 20px;
+    text-align: center;
+}
+
+table:hover {
+    transform: scale(1.01);
+}
+
+thead {
+    background-color: #2b2a2ac7;
+    color: white;
+    text-shadow: 0.5px 0.5px 0.5px black;
+}
+
+.cardBox {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    margin-bottom: 5%;
+}
+
+.cardBox .card {
+    margin: 1rem 0;
+    position: relative;
+    background: #d01257;
+    padding: 15%;
+    padding-bottom: 20%;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    border: solid black 1px;
+}
+
+.cardBox .card .numbers {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.cardBox .card .cardName {
+    color: floralwhite;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.cardBox .card .iconBox {
+    font-size: 2.0rem;
+    color: floralwhite;
+}
+
+.cardBox .card .cardName,
+.numbers:hover {
+    transform: scale(1.40);
+}
+
+.jumbotron .cardBox .card {
+    margin-top: 40%;
+    position: relative;
+    font-size: 20px;
+    font-weight: 500;
+    background: #d01257;
+    padding: 100px 60px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    align-content: center;
+}
+
+.jumbotron .cardBox .card .numbers {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.cardBox .card .cardName {
+    color: floralwhite;
+}
+
+form {
+    table-layout: fixed;
+    width: 70%;
+    margin-left: 30%;
+    margin-top: 10%;
+    display: inline-block;
+    border-collapse: collapse;
+    align-content: center;
+}
+
+td a {
+    color: #000;
+    text-decoration: none;
+}
+
+td a:hover {
+    color: #000;
+    transform: scale(1.00);
+}
+
+.outofstock {
+    color: red;
+}
+
+.instock {
+    color: green;
+}
+
+.almostoutofStock {
+    color: orange;
+}
+
+.available::after {
+    position: relative;
+    width: 100%;
+    border: #bb104f;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 300;
+    height: 100%;
+    color: #d01257;
+    content: "\f058";
+    font-family: "font Awesome 5 free";
+    font-weight: 900;
+    font-size: 1.3rem;
+}
+
+.stockStatus {
+    position: relative;
+    font-size: 1.5rem;
+    color: black;
+}
+
+
+/*
+div.form {
+    display: block;
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}*/
