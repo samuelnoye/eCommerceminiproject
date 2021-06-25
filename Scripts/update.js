@@ -23,32 +23,69 @@ let retriveLocalStroge = (eventUpd) => {
 }
 
 let updateLocalStroge = () => {
-    items = []
+    // items = []
+    // let data = window.localStorage.getItem('MyItemList');
+    // if (data != null) {
+
+    //     let name1 = document.getElementById("inputName1").value
+    //     let desc1 = document.getElementById('inputDescription1').value
+    //     let cat1 = document.getElementById('inputCategory1').value
+    //     let qty1 = document.getElementById('inputQuantity1').value
+    //     let i = document.getElementById('input1').value
+    //     console.log(i)
+    //     let newData = {
+    //         id: Date.now(),
+    //         name: name1,
+    //         desc: desc1,
+    //         cat: cat1,
+    //         qty: qty,
+
+    //     }
+    //     data[i] = newData
+    //     console.log(data)var data = window.localStorage.getItem('cart');
+
     let data = window.localStorage.getItem('MyItemList');
     if (data != null) {
 
         let name1 = document.getElementById("inputName1").value
-        let desc = document.getElementById('inputDescription1').value
-        let cat = document.getElementById('inputCategory1').value
-        let qty = document.getElementById('inputQuantity1').value
+        let desc1 = document.getElementById('inputDescription1').value
+        let cat1 = document.getElementById('inputCategory1').value
+        let qty1 = document.getElementById('inputQuantity1').value
         let i = document.getElementById('input1').value
 
-        let newData = {
-            id: Date.now(),
-            name: name1,
-            desc: desc,
-            cat: cat,
-            qty: qty,
 
-        }
-        data[i] = newData
+        let list = JSON.parse(data);
+        list[i].name = name1;
+        list[i].desc = desc1;
+        list[i].cat = cat1;
+        list[i].qty = qty1;
+        window.localStorage.setItem('MyItemList', JSON.stringify(list));
+
+    }
 
 
 
+
+
+    if (name1 == "") {
+        window.alert(" Name not entered");
+    } else if (desc1 == "") {
+        window.alert(" Description is empty");
+    } else if (cat1 == "") {
+        window.alert(" Category not selected");
+    } else if (qty1 == "") {
+        window.alert(" Quantity not filled");
+    } else if (qty1 < 0) {
+        window.alert(" Quantity invalid");
+
+    } else {
         window.localStorage.setItem('MyItemList', JSON.stringify(data));
         window.alert(" Updated Successfully");
         location.href = '/index.html';
     }
+
+
+}
 
 
 

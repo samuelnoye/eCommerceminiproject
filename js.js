@@ -81,9 +81,9 @@
      updBtn.forEach(Element => {
          Element.addEventListener('click', (e) => {
              let eventUpd = e.target.className.match(/\d+/g, '')
-             console.log(eventUpd[0])
+             console.log(eventUpd)
 
-             localStorage.setItem("eventUpd", eventUpd[0]);
+             localStorage.setItem("eventUpd", eventUpd);
              location.href = '/templates/update.html';
          })
      })
