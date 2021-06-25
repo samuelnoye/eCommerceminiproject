@@ -250,14 +250,11 @@ td a:hover {
 .available::after {
     position: relative;
     width: 100%;
-    border: #bb104f;
     padding: 2px 4px;
     border-radius: 4px;
     font-size: 14px;
-    font-weight: 300;
     height: 100%;
-    color: #d01257;
-    content: "\f058";
+    content: "\f205";
     font-family: "font Awesome 5 free";
     font-weight: 900;
     font-size: 1.3rem;

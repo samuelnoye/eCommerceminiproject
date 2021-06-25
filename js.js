@@ -6,17 +6,19 @@
  const createElement = (i, rowObj) => {
      console.log(rowObj)
 
-     let qty = rowObj.qty
-     let status
 
-     if (qty == 0) {
-         status = "red";
 
-     } else if (qty < 21) {
-         status = "orange";
-     } else {
-         status = "green";
+     statusColor = (qty) => {
+         if (qty == 0) {
+             return "outofstock"
+
+         } else if (qty < 21) {
+             return "almostoutofStock";
+         } else {
+             return "instock";
+         }
      }
+     statusColor();
 
 
      let table = `    <td>${i + 1 }</td>
@@ -24,9 +26,9 @@
                         <td>${rowObj.desc}</td>
                         <td>${rowObj.cat}</td>
                         <td>${rowObj.qty}</td>
-                        <td><i class="fa fa-edit "></i></td>
+                        <td><i class="fa fa-edit ${ i + 1 }"></i></td>
                         <td><i class="fa fa-trash ${ i + 1 }"></i></td>
-                        <td><div class="available">${status}</div></td>`
+                        <td><div class="available  ${statusColor(rowObj.qty)}" ></div></td>`
 
 
 
@@ -55,22 +57,14 @@
 
          }
          let item = createElement(i, row_ob)
-
+         statusColor();
          tbody.append(item)
 
 
 
 
      }
-     updBtn = document.querySelectorAll('.fa-edit')
-     console.log(updBtn)
-     updBtn.forEach(Element => {
-         Element.addEventListener('click', (e) => {
-             let eventUpd = e.target.className.match(/\d+/g, '')
-             console.log(eventUpd)
-             retriveLocalStroge(eventUpd)
-         })
-     })
+
 
      delBtn = document.querySelectorAll('.fa-trash')
      console.log(delBtn)
@@ -82,7 +76,34 @@
          })
      })
 
+     updBtn = document.querySelectorAll('.fa-edit')
+     console.log(updBtn)
+     updBtn.forEach(Element => {
+         Element.addEventListener('click', (e) => {
+             let eventUpd = e.target.className.match(/\d+/g, '')
+             console.log(eventUpd[0])
+
+             localStorage.setItem("eventUpd", eventUpd[0]);
+             location.href = '/templates/update.html';
+         })
+     })
+
      //return tbody
+ }
+
+
+
+
+
+ let delStroge = (eventdel) => {
+
+     //localStorage.setItem('eventUpd', JSON.stringify(eventUpd))
+     let MyItemList = JSON.parse(localStorage.getItem('MyItemList'));
+     let indexData = [+eventdel - 1]
+         //console.log(indexData)
+     MyItemList.splice(indexData, 1);
+     localStorage.setItem('MyItemList', JSON.stringify(MyItemList));
+     window.location.reload()
  }
 
 
@@ -90,32 +111,25 @@
 
      //localStorage.setItem('eventUpd', JSON.stringify(eventUpd))
      let MyItemList = JSON.parse(localStorage.getItem('MyItemList'));
-     let indexData = [+eventUpd - 1]
-     console.log(MyItemList)
-     MyItemList.name = document.getElementById("inputName1").value
-     MyItemList.desc = document.getElementById('inputDescription1').value
-     MyItemList.cat = document.getElementById('inputCategory1').value
-     MyItemList.qty = document.getElementById('inputQuantity1').value
+     let i = parseInt(eventUpd) - 1
+         //location.href = '/templates/update.html';
+     let name1 = document.getElementById("inputName1")
+     let desc = document.getElementById('inputDescription1')
+     let cat = document.getElementById('inputCategory1')
+     let qty = document.getElementById('inputQuantity1')
+
+
+     //console.log(MyItemList[i].name)
+
+
+     //console.log(MyItemList[i].name)
 
 
 
 
      //localStorage.setItem('MyItemList', JSON.stringify(MyItemList));
-     location.href = '/templates/update.html';
+
  }
-
- let delStroge = (eventdel) => {
-
-     //localStorage.setItem('eventUpd', JSON.stringify(eventUpd))
-     let MyItemList = JSON.parse(localStorage.getItem('MyItemList'));
-     let indexData = [+eventdel - 1]
-     MyItemList.splice(indexData, 1);
-     localStorage.setItem('MyItemList', JSON.stringify(MyItemList));
-     window.location.reload()
- }
-
-
-
 
 
 
