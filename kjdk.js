@@ -61,9 +61,9 @@ const showData = () => {
         tbody.append(item)
 
 
+
+
     }
-
-
 
 
     delBtn = document.querySelectorAll('.fa-trash')
@@ -89,8 +89,8 @@ const showData = () => {
     })
 
     //return tbody
-
 }
+
 
 
 
@@ -107,9 +107,44 @@ let delStroge = (eventdel) => {
 }
 
 
+let retriveLocalStroge = (eventUpd) => {
+
+    //localStorage.setItem('eventUpd', JSON.stringify(eventUpd))
+    let MyItemList = JSON.parse(localStorage.getItem('MyItemList'));
+    let i = parseInt(eventUpd) - 1
+        //location.href = '/templates/update.html';
+    let name1 = document.getElementById("inputName1")
+    let desc = document.getElementById('inputDescription1')
+    let cat = document.getElementById('inputCategory1')
+    let qty = document.getElementById('inputQuantity1')
+
+
+    //console.log(MyItemList[i].name)
+
+
+    //console.log(MyItemList[i].name)
 
 
 
+
+    //localStorage.setItem('MyItemList', JSON.stringify(MyItemList));
+
+}
+
+
+
+// function clearStorage() {
+//     //clears the entire localStorage
+//     localStorage.clear()
+//     console.log("clear records");
+// }
+
+// function removeItem() {
+//     //deletes item from localStorage
+//     var key = document.getElementById('removeKey').value;
+//     localStorage.removeItem(key)
+//     console.log("remove items");
+// }
 
 document.addEventListener('DOMContentLoaded', () => {
     //document.getElementById('submit').addEventListener('click', addItem);

@@ -150,11 +150,12 @@ thead {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
 }
 
 .cardBox .card {
-    margin: 1rem 0;
+    margin-top: 0.2rem 0;
+    margin: 0.2rem 0;
     position: relative;
     background: #d01257;
     padding: 15%;
@@ -264,6 +265,11 @@ td a:hover {
     position: relative;
     font-size: 1.5rem;
     color: black;
+}
+
+.scrollit {
+    overflow: scroll;
+    height: 100px;
 }
 
 
