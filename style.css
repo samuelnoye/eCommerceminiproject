@@ -7,14 +7,14 @@ body {
     width: 220px;
     height: 100%;
     left: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden;
+    transition: 0.5s;
     background: #1a1a1a;
     color: #fff;
 }
 
-.content-container {
-    padding-top: 20px;
+.sidebar-container.active {
+    width: 60px;
 }
 
 .sidebar-logo {
@@ -84,7 +84,46 @@ body {
 }
 
 .content-container {
-    padding-left: 220px;
+    position: absolute;
+    background-color: #fff;
+    width: calc(100% - 220px);
+    left: 220px;
+    min-height: 100vh;
+    transition: 0.5s;
+}
+
+.content-container.active {
+    width: calc(100% - 5px);
+    left: 5px;
+}
+
+
+/* .toggle  */
+
+.content-container .topbar {
+    width: 100%;
+    background-color: #fff;
+    height: 60px;
+    display: flex;
+    margin-bottom: 0%;
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.toggle .icon {
+    position: absolute;
+    width: 100%;
+    color: #1a1a1a;
+    height: 100%;
+    line-height: 60px;
+    font-size: 24px;
+    text-align: center;
 }
 
 table {
@@ -150,7 +189,7 @@ thead {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
-    margin-bottom: 3%;
+    margin-top: 0%;
 }
 
 .cardBox .card {
@@ -272,16 +311,11 @@ td a:hover {
     height: 100px;
 }
 
-
-/*
-div.form {
-    display: block;
-    text-align: center;
+.menu {
+    width: calc(100% - 220px);
+    position: relative;
+    left: 220px;
+    min-height: 9.5vh;
+    background-color: #d01257;
+    transition: 0.5s;
 }
-
-form {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-}*/

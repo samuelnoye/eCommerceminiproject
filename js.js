@@ -67,7 +67,7 @@ const showData = () => {
 
     //get delete button
     delBtn = document.querySelectorAll('.fa-trash')
-    console.log(delBtn)
+
     delBtn.forEach(Element => {
         Element.addEventListener('click', (e) => {
             let eventdel = e.target.className.match(/\d+/g, '')
