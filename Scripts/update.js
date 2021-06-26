@@ -1,7 +1,7 @@
 let retriveLocalStroge = (eventUpd) => {
-    //localStorage.setItem('eventUpd', JSON.stringify(eventUpd))
+
     let MyItemList = JSON.parse(localStorage.getItem('MyItemList'));
-    console.log(MyItemList);
+
     let i = parseInt(eventUpd) - 1
 
     let name1 = document.getElementById("inputName1")
@@ -23,26 +23,7 @@ let retriveLocalStroge = (eventUpd) => {
 }
 
 let updateLocalStroge = () => {
-    // items = []
-    // let data = window.localStorage.getItem('MyItemList');
-    // if (data != null) {
 
-    //     let name1 = document.getElementById("inputName1").value
-    //     let desc1 = document.getElementById('inputDescription1').value
-    //     let cat1 = document.getElementById('inputCategory1').value
-    //     let qty1 = document.getElementById('inputQuantity1').value
-    //     let i = document.getElementById('input1').value
-    //     console.log(i)
-    //     let newData = {
-    //         id: Date.now(),
-    //         name: name1,
-    //         desc: desc1,
-    //         cat: cat1,
-    //         qty: qty,
-
-    //     }
-    //     data[i] = newData
-    //     console.log(data)var data = window.localStorage.getItem('cart');
 
     let data = window.localStorage.getItem('MyItemList');
     if (data != null) {
@@ -61,12 +42,6 @@ let updateLocalStroge = () => {
         list[i].qty = qty1;
 
 
-
-
-
-
-
-
         if (name1 == "") {
             window.alert(" Name not entered");
         } else if (desc1 == "") {
@@ -80,12 +55,17 @@ let updateLocalStroge = () => {
 
         } else {
             window.localStorage.setItem('MyItemList', JSON.stringify(list));
+
             window.alert(" Updated Successfully");
+            document.querySelector('form').reset();
             location.href = '/index.html';
         }
 
 
     }
+}
+let clear = () => {
+    document.querySelector('form1').reset();
 }
 
 

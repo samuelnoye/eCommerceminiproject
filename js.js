@@ -2,12 +2,12 @@ let tbody = document.querySelector('#tab1');
 let stockStatus = document.querySelector('.available');
 
 
-
+//create element for table 
 const createElement = (i, rowObj) => {
     console.log(rowObj)
 
 
-
+    //set status color
     statusColor = (qty) => {
         if (qty == 0) {
             return "outofstock"
@@ -41,10 +41,10 @@ const createElement = (i, rowObj) => {
     return createElement1
 }
 
-
+//show data to table
 const showData = () => {
     let MyItemList = JSON.parse(localStorage.getItem('MyItemList'))
-        //console.log(MyItemList)
+
 
     let itemlength = MyItemList.length
     for (let i = 0; i < itemlength; i++) {
@@ -65,7 +65,7 @@ const showData = () => {
 
 
 
-
+    //get delete button
     delBtn = document.querySelectorAll('.fa-trash')
     console.log(delBtn)
     delBtn.forEach(Element => {
@@ -76,6 +76,7 @@ const showData = () => {
         })
     })
 
+    //get edit button
     updBtn = document.querySelectorAll('.fa-edit')
     console.log(updBtn)
     updBtn.forEach(Element => {
@@ -94,7 +95,7 @@ const showData = () => {
 
 
 
-
+//delete item
 let delStroge = (eventdel) => {
 
     //localStorage.setItem('eventUpd', JSON.stringify(eventUpd))
@@ -106,13 +107,59 @@ let delStroge = (eventdel) => {
     window.location.reload()
 }
 
+//total items
+const allItems = () => {
+    let tnp = document.getElementById('tp');
+    tnp.innerText = JSON.parse(localStorage.MyItemList).length;
+
+}
+
+
+//total stock
+const countQuantity = () => {
+    let localStorageItems = JSON.parse(localStorage.getItem("MyItemList"));
+    let totalNumber = 0;
+
+    for (let item of localStorageItems) {
+        totalNumber += parseInt(item.qty);
+    }
+
+    return totalNumber;
+
+}
+
+const updateSummary = () => {
+    document.getElementById("tq").innerText = countQuantity();
+}
+
+//total category
+const getCategory = () => {
+    return localStorage.getItem("MyItemList") ? JSON.parse(localStorage.getItem("MyItemList")) : [];
+}
+
+const countCategory = () => {
+    let countItems = [];
+
+    let storeData = getCategory();
+    for (let item of storeData) {
+        if (!countItems.includes(item.cat)) {
+            countItems.push(item.category);
+        }
+    }
+    return countItems;
+}
+
+
+
 
 
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    //document.getElementById('submit').addEventListener('click', addItem);
-    showData()
 
+    showData()
+    allItems()
+    updateSummary()
+    document.getElementById("tc").innerText = countCategory().length;
 });

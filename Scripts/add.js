@@ -48,7 +48,7 @@ const addItem = (ev) => {
 
     } else {
         localStorage.setItem('MyItemList', JSON.stringify(items));
-        console.log(items)
+
         window.alert(" Item added Successfully");
         document.querySelector('form').reset();
         location.href = '/index.html';
