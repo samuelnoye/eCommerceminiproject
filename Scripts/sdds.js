@@ -15,10 +15,7 @@ let retriveLocalStroge = (eventUpd) => {
     cat.value = MyItemList[i].cat
     qty.value = MyItemList[i].qty
     input1.value = i
-        //console.log(MyItemList[i].name)
 
-
-    //localStorage.setItem('MyItemList', JSON.stringify(MyItemList));
 
 }
 
