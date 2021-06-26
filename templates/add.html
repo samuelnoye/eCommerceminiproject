@@ -69,16 +69,18 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="category">Category</label>
-                                <label for=""></label> <select id="inputCategory" class="form-control" required>
-                         
-                          <option> </option>
-                          <option>Cat 1</option>
-                          <option>Cat 2</option>
-                          <option>Cat 3</option>
-                          <option>Cat 4</option>
-                          <option>Cat 5</option>
-                         </select>
+                                <input list="browsers" name="browser" class="form-control" id="inputCategory" required>
+
+                                <datalist id="browsers">
+                                     
+                                  <option value="Cat 1">
+                                  <option value="Cat 2">
+                                  <option value="Cat 3">
+                                  <option value="Cat 4">
+                                  <option value="Cat 5">
+                                </datalist>
                             </div>
+
                             <div class="form-group col-md-6">
                                 <label for="Quantiy">Quantity</label>
                                 <input type="number" class="form-control" id="inputQuantity" required>

@@ -50,52 +50,33 @@
 
         <div class="container-fluid">
 
-
+            <!-- Main component for a primary marketing message or call to action -->
             <div class="jumbotron">
 
-                <div class="form1">
+                <div class="form">
                     <form>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="name">Name</label>
-                                <input type="text" class="form-control" id="inputName1" required>
+                                <input type="name" class="form-control" id="inputName" required>
                             </div>
-                            <div class="form-group col-md-6">
 
-                                <input type="hidden" class="form-control" id="input1" required>
-                            </div>
                             <div class="form-group col-md-6">
                                 <label for="description">Description</label>
-                                <input type="text" class="form-control" id="inputDescription1" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="category">Category</label>
-                                <input list="browsers" name="browser" class="form-control" id="inputCategory1" required>
 
-                                <datalist id="browsers">
-                                     
-                                  <option value="Cat 1">
-                                  <option value="Cat 2">
-                                  <option value="Cat 3">
-                                  <option value="Cat 4">
-                                  <option value="Cat 5">
-                                </datalist>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="Quantiy">Quantity</label>
-                                <input type="number" class="form-control" id="inputQuantity1" required>
+
                             </div>
                         </div>
+
+
 
                         <br>
-                        <button type="submit" id="submit1" class="btn btn-info btn-md" name="addItem">
-                            update <i class="fa fa-check-circle"></i>
+                        <button type="submit" id="submit" class="btn btn-info btn-md" name="addItem">
+                            Add <i class="fa fa-check-circle"></i>
                         </button>
 
                     </form>
-
+                    <div></div>
                 </div>
 
             </div>
@@ -104,7 +85,7 @@
 
     </div>
 
-    <script src="/Scripts/update.js"></script>
+    <script src="/Scripts/add.js"></script>
 </body>
 
 </html>
